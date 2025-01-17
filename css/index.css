@@ -1,0 +1,121 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: Roboto, sans-serif;
+    background-color: #f8f9fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+  }
+  
+  section {
+    margin: 0 auto;
+    padding: 20px;
+    max-width: 1200px;
+  }
+  
+  h1{
+    font-family: Roboto, cursive;
+    font-size: 2.5em;
+    background-color: #d7caea;
+    color: #333;
+    padding: 10px 20px;
+    margin-bottom: 20px;
+  }
+  
+  #intro p{
+    margin: 20px;
+  }
+  
+  #search {
+    text-align: center;
+  }
+  
+  #search input {
+    width: 60%;
+    padding: 10px;
+    font-size: 1em;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    outline: none;
+  }
+  
+  #search button {
+    background-color: #d7caea;
+    padding: 10px 20px;
+    margin-left: 10px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  #search button:hover {
+    background-color: #9e8bb5;
+  }
+  
+  #featured-artworks {
+    margin-top: 40px;
+    padding: 10px 20px;
+  }
+  
+  #featured-artworks h2 {
+    font-size: 2em;
+    color: #333;
+  }
+  
+  #featured-artworks p {
+    margin-bottom: 20px;
+    color: #555;
+  }
+  
+  .artworks-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .art-card {
+    background: white;
+    padding: 15px;
+    width: 200px;
+    border-radius: 10px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
+  }
+  
+  .art-card img {
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease-in-out;
+  }
+  
+  .art-card img:hover {
+    transform: scale(1.05);
+  }
+  
+  .art-card h3 {
+    font-size: 1.2em;
+    margin-bottom: 5px;
+    color: #4a4a4a;
+  }
+  
+  .art-card p {
+    font-size: 0.9em;
+    color: #666;
+  }
+  
+  footer {
+    text-align: center;
+    padding: 10px;
+  }
+  
