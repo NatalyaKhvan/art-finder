@@ -10,17 +10,23 @@
     <main id="main-content">
         <section id="intro">
             <h1>Welcome to Art Finder!</h1>
-            <p>Art Finder is your gateway to the stunning collection of artworks at the Art Institute of Chicago. Explore featured masterpieces or use the search bar to discover artists, styles, and stories that inspire you. Start your journey into the art world today!
+            <p>Explore stunning artwork and discover fascinating details by searching through the collection.</p>
+        </section>
+
         <section id="search">
             <input type="text" id="search-input" placeholder="Search for artwork">
             <button id="search-button">Search</button>
         </section>
-        <section id="featured-artworks">
-            <h2>Featured Artworks</h2>
-            <p>Check out some of the most iconic pieces in our collection:</p>
-            <div class="artworks-container"></div>
+
+        <!-- Container for search results -->
+        <section class="artworks-container"></section>
+
+        <!-- Section for displaying extra information of a selected artwork -->
+        <section id="extra-info">
+            <div id="artwork-details"></div>
         </section>
     </main>
+
     <footer>
         <p>&copy; Art Finder 2025</p>
     </footer>
