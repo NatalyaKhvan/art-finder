@@ -82,9 +82,63 @@ document.addEventListener("DOMContentLoaded", () => {
         <h3>${artwork.title || 'Untitled'}</h3>
         <p>Artist: ${artwork.artist_title || 'Unknown'}</p>
       `;
+
+      // Add click event to fetch and display detailed info
+      artCard.addEventListener('click', () => {
+        fetchArtworkDetails(artwork.id);
+      });
+
       resultsDiv.appendChild(artCard); // Adds the card to the results container.
     });
   }
+
+  // Fetch and display detailed artwork information in a modal
+  async function fetchArtworkDetails(artworkId) {
+    try {
+      const response = await fetch(`${apiUrl}/${artworkId}`);
+      const data = await response.json();
+      const artwork = data.data;
+
+      const modalContent = `
+        <h2>${artwork.title || 'Untitled'}</h2>
+        <p><strong>Artist:</strong> ${artwork.artist_title || 'Unknown Artist'}</p>
+        <p><strong>Date:</strong> ${artwork.date_display || 'Unknown Date'}</p>
+        <p><strong>Medium:</strong> ${artwork.medium_display || 'Unknown Medium'}</p>
+        <p><strong>Credit Line:</strong> ${artwork.credit_line || 'N/A'}</p>
+        <p><strong>Place of Origin:</strong> ${artwork.place_of_origin || 'Unknown'}</p>
+        <p><strong>Gallery:</strong> ${artwork.gallery_title || 'N/A'}</p>
+        <img src="https://www.artic.edu/iiif/2/${artwork.image_id}/full/800,/0/default.jpg" alt="${artwork.title}">
+      `;
+
+      showModal(modalContent);
+    } catch (error) {
+      console.error("Error fetching artwork details:", error);
+    }
+  }
+
+  // Display a modal with the provided content
+  function showModal(content) {
+    const modal = document.createElement('div');
+    modal.classList.add('modal');
+    modal.innerHTML = `
+      <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        ${content}
+      </div>
+    `;
+    document.body.appendChild(modal);
+
+    modal.querySelector('.close-btn').addEventListener('click', () => {
+      modal.remove();
+    });
+
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        modal.remove();
+      }
+    });
+  }
+
 
   // Initial fetch to display public domain artworks on page load.
   fetchArtworks();
