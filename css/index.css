@@ -1,10 +1,12 @@
-/* Global Reset */
+/* This design is Desktop first */
+
+/* ==== Global Reset ==== */
 * {
   margin: 0;
   padding: 0;
 }
 
-/* Body Styling */
+/* ==== Body Styling ==== */
 body {
   font-family: Roboto, sans-serif;
   background-color: #f8f9fa;
@@ -14,7 +16,7 @@ body {
   box-sizing: border-box;
 }
 
-/* Section Styling */
+/* ==== Section Styling ==== */
 section {
   margin: 0 auto;
   padding: 20px;
@@ -25,7 +27,7 @@ section {
   padding: 0;
 }
 
-/* Header Styling */
+/* ==== Header Styling ==== */
 h1 {
   font-family: Roboto, cursive;
   font-size: 2.5em;
@@ -35,7 +37,7 @@ h1 {
   margin-bottom: 20px;
 }
 
-/* Search Input and Button Styling */
+/* ==== Search Input and Button Styling ==== */
 #search input {
   width: 60%;
   padding: 10px;
@@ -57,7 +59,7 @@ h1 {
   background-color: #9e8bb5;
 }
 
-/* Artworks Container */
+/* ==== Artworks Container ==== */
 .artworks-container {
   display: flex;
   flex-wrap: wrap;
@@ -65,7 +67,7 @@ h1 {
   justify-content: center;
 }
 
-/* Art Card Styling */
+/* ==== Art Card Styling ==== */
 .art-card {
   background: white;
   padding: 15px;
@@ -96,7 +98,7 @@ h1 {
   color: #666;
 }
 
-/* Modal Styling */
+/* ==== Modal Styling ==== */
 .modal {
   position: fixed;
   top: 0;
@@ -133,10 +135,24 @@ h1 {
   cursor: pointer;
 }
 
-/* Footer Styling */
+/* ==== Footer Styling ==== */
 footer {
   text-align: center;
   padding: 10px;
   font-family: Roboto, cursive;
 }
 
+/* ===== Responsive Styles for Mobile devices ===== */
+@media (max-width: 768px) {
+  .artworks-container {
+    gap: 10px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    justify-items: center;
+  }
+
+  .art-card {
+    width: 85%;
+    max-width: 300px;
+  }
+}
